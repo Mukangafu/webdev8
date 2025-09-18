@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT-A-HOME | Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background: #444;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .home-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form label {
+            margin: 5px 0 2px;
+        }
+
+        form input, form textarea, form button {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        form button {
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 style="float:left; margin:0; padding:0;">RENT-A-HOME</h1>
+            <ul>
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('about')">About</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h2>Find Your Perfect Rental Home</h2>
+        <p>Affordable, convenient, and reliable rental solutions at your fingertips.</p>
+        <button onclick="scrollToSection('listings')">View Listings</button>
+    </section>
+
+    <section id="listings">
+        <h2>Featured Homes</h2>
+        <div class="home-grid">
+            <div class="home-card">
+                <img src="https://via.placeholder.com/400x250" alt="Cozy Apartment">
+                <h3>Cozy Apartment</h3>
+                <p>Located near the city center with stunning views.</p>
+            </div>
+            <div class="home-card">
+                <img src="https://via.placeholder.com/400x250" alt="Riverside Villa">
+                <h3>Riverside Villa</h3>
+                <p>Peaceful retreat near the river with modern amenities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About RENT-A-HOME</h2>
+        <p>RENT-A-HOME is dedicated to helping you find affordable rental homes across Kenya. We value convenience, reliability, and customer satisfaction.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 RENT-A-HOME. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for contacting RENT-A-HOME!');
+        });
+    </script>
+</body>
+</html>
